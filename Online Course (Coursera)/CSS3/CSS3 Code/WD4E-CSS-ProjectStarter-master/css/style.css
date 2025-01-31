@@ -9,9 +9,10 @@ nav {
     background-color: #4fff45;
 }
 li {
-    display: inline;
+    display: inline-block;
     width: 30%;
     text-align: center;
+    background-color: rgb(50, 106, 155);
 }
 h1 {
     text-align: justify;
@@ -28,4 +29,12 @@ footer {
 p {
     line-height: 2;
 }
-
+nav a{
+    text-decoration:none ;
+}
+ul{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-between;
+}
