@@ -5,9 +5,18 @@ body {
 header {
     background-color: #39997e;
 }
-nav {
+header img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+header h1{
+    text-align: center;
+}
+nav {    
     background-color: #4fff45;
 }
+
 li {
     display: inline-block;
     width: 30%;
@@ -37,4 +46,22 @@ ul{
     list-style: none;
     flex-direction: row;
     justify-content: space-between;
+}
+.current{
+    text-transform: uppercase;
+    background-color: lightgoldenrodyellow;
+}
+.neighbourhood{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+div img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
 }
