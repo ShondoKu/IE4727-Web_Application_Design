@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaJam Coffee House</title>
+    <style>
+      body {
+        font-family: Verdana, Arial, sans-serif;
+      }
+
+      #wrapper {
+        background-color: #ddd1b7;
+        width: 80vw;
+        margin: auto;
+        min-width: 800px;
+      }
+
+      #leftcolumn {
+        float: left;
+        width: 150px;
+      }
+
+      #rightcolumn {
+        margin-left: 150px;
+        background-color: #f4f5e0;
+      }
+
+      .content {
+        padding: 20px 20px 20px 20px;
+      }
+
+      header {
+        height: 120px;
+        background-image: url("JavaJam Coffee House.jpg");
+        background-repeat: no-repeat;
+        background-color: #cdab61;
+        background-position: center;
+      }
+
+      footer {
+        background-color: #cdab61;
+        font-size: 150%;
+        text-align: center;
+        width: 100%;
+        height: 120px;
+      }
+
+      h1 {
+        padding: 0;
+        margin: 0;
+      }
+
+      h2 {
+        color: #422312;
+        font-family: arial, sans-serif;
+        margin: 0;
+      }
+
+      footer {
+        color: black;
+        font-size: 70%;
+        padding: 20px 0 20px 0;
+        height: auto;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 15px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        margin: 5px 0;
+      }
+
+      nav a:hover {
+        color: #ccaa66;
+      }
+      table {
+        border-color: black;
+        border-width: 1px;
+        border-style: solid;
+        margin-top: 20px;
+        text-align: center;
+      }
+      tr:nth-of-type(odd) {
+        background-color: #cdab61;
+      }
+      td {
+        padding: 5px 5px 5px 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <header></header>
+      <div id="leftcolumn">
+        <nav>
+          <a href="index.html" id="current">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="music.html">Music</a>
+          <a href="jobs.html">Jobs</a>
+        </nav>
+      </div>
+      <div id="rightcolumn">
+        <div class="content">
+          <h2>Coffee at JavaJam</h2>
+          <p>
+            The first Friday night each month is a special night. Join us from
+            8pm to 11pm for some music you won't want to miss
+          </p>
+          <table width="500px" align="center">
+            <tr>
+              <th align="left">Artist</th>
+              <th align="left">Date</th>
+              <th align="left">Time</th>
+            </tr>
+            <tr>
+              <td>The Jazzsingers</td>
+              <td>Friday, 5/1/2014</td>
+              <td>8:00 PM</td>
+            </tr>
+            <tr>
+              <td>Just Jazz Quartet</td>
+              <td>Friday, 6/5/2014</td>
+              <td>8:00 PM</td>
+            </tr>
+            <tr>
+              <td>Mariachi Band</td>
+              <td>Friday, 7/3/2014</td>
+              <td>8:00 PM</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <footer>
+        <i>
+          <p>
+            Copyright &copy 2014 JavaJam Coffee House<br /><u
+              ><a href="mailto:MuhammadAzfarNasri@BinAzman.com"
+                >MuhammadAzfarNasri@BinAzman.com</a
+              ></u
+            >
+          </p>
+        </i>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaJam Coffee House</title>
+    <style>
+      body {
+        font-family: Verdana, Arial, sans-serif;
+      }
+
+      #wrapper {
+        background-color: #ddd1b7;
+        width: 80vw;
+        margin: auto;
+        min-width: 800px;
+      }
+
+      #leftcolumn {
+        float: left;
+        width: 150px;
+      }
+
+      #rightcolumn {
+        margin-left: 150px;
+        background-color: #f4f5e0;
+      }
+
+      .content {
+        padding: 20px 20px 20px 20px;
+      }
+
+      header {
+        height: 120px;
+        background-image: url("JavaJam Coffee House.jpg");
+        background-repeat: no-repeat;
+        background-color: #cdab61;
+        background-position: center;
+      }
+
+      footer {
+        background-color: #cdab61;
+        font-size: 150%;
+        text-align: center;
+        width: 100%;
+        height: 120px;
+      }
+
+      h1 {
+        padding: 0;
+        margin: 0;
+      }
+
+      h2 {
+        color: #422312;
+        font-family: arial, sans-serif;
+        margin: 0;
+      }
+
+      footer {
+        color: black;
+        font-size: 70%;
+        padding: 20px 0 20px 0;
+        height: auto;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 15px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        margin: 5px 0;
+      }
+
+      nav a:hover {
+        color: #ccaa66;
+      }
+      table {
+        border-color: black;
+        border-width: 1px;
+        border-style: solid;
+        margin-top: 20px;
+        text-align: center;
+      }
+      tr:nth-of-type(odd) {
+        background-color: #cdab61;
+      }
+      td {
+        padding: 5px 5px 5px 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <header></header>
+      <div id="leftcolumn">
+        <nav>
+          <a href="index.html" id="current">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="music.html">Music</a>
+          <a href="jobs.html">Jobs</a>
+        </nav>
+      </div>
+      <div id="rightcolumn">
+        <div class="content">
+          <h2>Jobs at JavaJam</h2>
+          <p>
+            Want to work at JavaJam? Fill up the form below to send in your
+            application. Required field are marked with a asterisks *
+          </p>
+          <form action="show_get.php" method="get">
+            <table width="500px" align="center">
+              <tr>
+                <td align="left">*Name:</td>
+                <td align="left">
+                  <input type="text" name="name" size="30" />
+                </td>
+              </tr>
+              <tr>
+                <td align="left">*Email:</td>
+                <td align="left">
+                  <input type="text" name="email" size="30" />
+                </td>
+              </tr>
+              <tr>
+                <td align="left">*Position applying for:</td>
+                <td align="left">
+                  <select name="position">
+                    <option value="barista">Barista</option>
+                    <option value="cashier">Cashier</option>
+                    <option value="cook">Cook</option>
+                    <option value="delivery">Delivery Driver</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td align="left">*Experience:</td>
+                <td align="left">
+                  <textarea name="experience" rows="4" cols="23"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td align="left">*Education:</td>
+                <td align="left">
+                  <textarea name="education" rows="4" cols="23"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td align="left">Resume:</td>
+                <td align="left"><input type="file" name="resume" /></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="center">
+                  <input type="submit" value="Submit Application" />
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+      <footer>
+        <i>
+          <p>
+            Copyright &copy 2014 JavaJam Coffee House<br /><u
+              ><a href="mailto:MuhammadAzfarNasri@BinAzman.com"
+                >MuhammadAzfarNasri@BinAzman.com</a
+              ></u
+            >
+          </p>
+        </i>
+      </footer>
+    </div>
+  </body>
+</html>
