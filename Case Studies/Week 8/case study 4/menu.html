@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaJam Coffee House</title>
+    <script src="menu_Update.js" defer></script>
     <style>
       body {
         font-family: Verdana, Arial, sans-serif;
@@ -86,7 +87,8 @@
         border-width: 1px;
         border-style: solid;
         margin-top: 20px;
-        text-align: center;
+        text-align: left;
+        width: 100%;
       }
       tr:nth-of-type(even) {
         background-color: #cdab61;
@@ -111,33 +113,99 @@
       <div id="rightcolumn">
         <div class="content">
           <h2>Coffee at JavaJam</h2>
-          <table width="500px" align="center">
+          <table align="center">
             <tr>
               <th align="left">Coffee</th>
-              <th align="left">Description</th>
-              <th align="left">Price</th>
+              <th align="left">Description and Price</th>
+              <th align="left" style="width: 100px">Quantity</th>
+              <th align="left" style="width: 100px">Sub-Total</th>
             </tr>
             <tr>
               <td>Just Java</td>
               <td>
-                Regular house blend, decaffeinated coffee, or flavor of the day.
+                Regular house blend, decaffeinated coffee, or flavor of the
+                day.<br /><br /><strong>Price:</strong> $2.00
               </td>
-              <td>$2.00</td>
+              <td>
+                <input
+                  type="number"
+                  name="qty_Java"
+                  min="0"
+                  step="1"
+                  placeholder="0"
+                  style="width: 50px"
+                />
+              </td>
+              <td class="subtotal" data-item="Java">$0.00</td>
             </tr>
             <tr>
               <td>Cafe au Lait</td>
-              <td>House blend coffee with steamed milk.</td>
-              <td>$2.50</td>
+              <td>
+                House blend coffee with steamed milk.<br /><br />
+                <strong>Price:</strong> Single $2.00; Double $3.00
+              </td>
+
+              <td>
+                <label
+                  >Single:
+                  <input
+                    type="number"
+                    name="qty_Cafe_Single"
+                    min="0"
+                    step="1"
+                    placeholder="0"
+                    style="width: 50px" /></label
+                ><br />
+                <label
+                  >Double:
+                  <input
+                    type="number"
+                    name="qty_Cafe_Double"
+                    min="0"
+                    step="1"
+                    placeholder="0"
+                    style="width: 50px"
+                /></label>
+              </td>
+
+              <td class="subtotal" data-item="Cafe">$0.00</td>
             </tr>
             <tr>
               <td>Iced Cappuccino</td>
               <td>
                 Sweetened espresso blended with icy-cold milk and served in a
-                chilled glass.
+                chilled glass.<br /><br />
+                <strong>Price:</strong> Single $4.75; Double $5.75
               </td>
-              <td>$4.75</td>
+              <td>
+                <label
+                  >Single:
+                  <input
+                    type="number"
+                    name="qty_Cap_Single"
+                    min="0"
+                    step="1"
+                    placeholder="0"
+                    style="width: 50px" /></label
+                ><br />
+                <label
+                  >Double:
+                  <input
+                    type="number"
+                    name="qty_Cap_Double"
+                    min="0"
+                    step="1"
+                    placeholder="0"
+                    style="width: 50px"
+                /></label>
+              </td>
+
+              <td class="subtotal" data-item="Cap">$0.00</td>
             </tr>
           </table>
+          <div style="text-align: right; margin-top: 20px">
+            <strong>Total:</strong> $<span id="total">0.00</span>
+          </div>
         </div>
       </div>
       <footer>
