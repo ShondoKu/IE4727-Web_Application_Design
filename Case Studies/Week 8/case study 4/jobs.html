@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaJam Coffee House</title>
+    <script src="formvalidation.js"></script>
     <style>
       body {
         font-family: Verdana, Arial, sans-serif;
@@ -125,6 +126,7 @@
                     name="name"
                     size="30"
                     required="required"
+                    id="name"
                   />
                 </td>
               </tr>
@@ -136,6 +138,7 @@
                     name="email"
                     size="30"
                     required="required"
+                    id="email"
                   />
                 </td>
               </tr>
@@ -151,6 +154,19 @@
                 </td>
               </tr>
               <tr>
+                <td align="left"><label for="startDate">*Start Date</label></td>
+                <td align="left">
+                  <input
+                    type="date"
+                    name="startDate"
+                    size="30"
+                    required="required"
+                    id="startDate"
+                  />
+                </td>
+              </tr>
+
+              <tr>
                 <td align="left">
                   <label for="experience">*Experience</label>
                 </td>
@@ -160,6 +176,7 @@
                     rows="4"
                     cols="23"
                     required="required"
+                    id="experience"
                   ></textarea>
                 </td>
               </tr>
@@ -171,6 +188,7 @@
                     rows="4"
                     cols="23"
                     required="required"
+                    id="education"
                   ></textarea>
                 </td>
               </tr>
