@@ -95,6 +95,16 @@
       td {
         padding: 5px 5px 5px 5px;
       }
+      .error-message {
+        display: inline-block;
+        color: red;
+        font-size: 0.9em;
+        margin-left: 10px;
+      }
+      input:invalid,
+      textarea:invalid {
+        border-color: red;
+      }
     </style>
   </head>
 
@@ -194,7 +204,15 @@
               </tr>
               <tr>
                 <td align="left"><label for="resume">*Resume</label></td>
-                <td align="left"><input type="file" name="resume" /></td>
+                <td align="left">
+                  <input
+                    type="file"
+                    name="resume"
+                    id="resume"
+                    accept=".pdf, .doc, .docx"
+                    required
+                  />
+                </td>
               </tr>
               <tr>
                 <td colspan="2" align="center">
