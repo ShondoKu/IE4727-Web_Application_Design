@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JavaJam Coffee House</title>
     <script src="menu_Update.js" defer></script>
     <style>
       body {
         font-family: Verdana, Arial, sans-serif;
       }
-
       #wrapper {
         background-color: #ddd1b7;
         width: 80vw;
         margin: auto;
         min-width: 800px;
       }
-
       #leftcolumn {
         float: left;
         width: 150px;
       }
-
       #rightcolumn {
         margin-left: 150px;
         background-color: #f4f5e0;
       }
-
       .content {
-        padding: 20px 20px 20px 20px;
+        padding: 20px;
       }
-
       header {
         height: 120px;
         background-image: url("JavaJam Coffee House.jpg");
@@ -38,63 +33,63 @@
         background-color: #cdab61;
         background-position: center;
       }
-
       footer {
         background-color: #cdab61;
-        font-size: 150%;
         text-align: center;
         width: 100%;
-        height: 120px;
-      }
-
-      h1 {
-        padding: 0;
-        margin: 0;
-      }
-
-      h2 {
-        color: #422312;
-        font-family: arial, sans-serif;
-        margin: 0;
-      }
-
-      footer {
         color: black;
         font-size: 70%;
         padding: 20px 0 20px 0;
         height: auto;
       }
-
+      h2 {
+        color: #422312;
+        font-family: arial, sans-serif;
+        margin: 0;
+      }
       nav {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 15px;
       }
-
       nav a {
         text-decoration: none;
         color: black;
         font-weight: bold;
         margin: 5px 0;
       }
-
-      nav a:hover {
-        color: #ccaa66;
-      }
       table {
-        border-color: black;
-        border-width: 1px;
-        border-style: solid;
+        border: 1px solid black;
         margin-top: 20px;
         text-align: left;
         width: 100%;
+        border-collapse: collapse;
       }
       tr:nth-of-type(even) {
         background-color: #cdab61;
       }
-      td {
-        padding: 5px 5px 5px 5px;
+      td,
+      th {
+        padding: 8px;
+        vertical-align: top;
+      }
+      input[type="number"] {
+        width: 60px;
+      }
+      input[readonly] {
+        background: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 3px 6px;
+        width: 80px;
+        text-align: right;
+      }
+      .shot-options {
+        margin-top: 8px;
+      }
+      .shot-options label {
+        margin-right: 10px;
+        font-weight: normal;
       }
     </style>
   </head>
@@ -102,6 +97,7 @@
   <body>
     <div id="wrapper">
       <header></header>
+
       <div id="leftcolumn">
         <nav>
           <a href="index.html" id="current">Home</a>
@@ -110,108 +106,144 @@
           <a href="jobs.html">Jobs</a>
         </nav>
       </div>
+
       <div id="rightcolumn">
         <div class="content">
           <h2>Coffee at JavaJam</h2>
+
           <table align="center">
             <tr>
               <th align="left">Coffee</th>
               <th align="left">Description and Price</th>
-              <th align="left" style="width: 100px">Quantity</th>
-              <th align="left" style="width: 100px">Sub-Total</th>
+              <th align="left" style="width: 160px">Quantity</th>
+              <th align="left" style="width: 120px">Sub-Total</th>
             </tr>
+
+            <!-- Just Java (no single/double option) -->
             <tr>
               <td>Just Java</td>
               <td>
-                Regular house blend, decaffeinated coffee, or flavor of the
-                day.<br /><br /><strong>Price:</strong> $2.00
+                Regular house blend, decaffeinated coffee, or flavor of the day.
+                <div style="margin-top: 8px"><strong>Price:</strong> $2.00</div>
               </td>
               <td>
                 <input
                   type="number"
-                  name="qty_Java"
+                  name="qty_java"
                   min="0"
                   step="1"
-                  placeholder="0"
-                  style="width: 50px"
+                  value="0"
                 />
               </td>
-              <td class="subtotal" data-item="Java">$0.00</td>
+              <td>
+                <input
+                  type="text"
+                  name="subtotal_java"
+                  value="$0.00"
+                  readonly
+                />
+              </td>
             </tr>
+
+            <!-- Cafe au Lait (radio options moved into description) -->
             <tr>
               <td>Cafe au Lait</td>
               <td>
-                House blend coffee with steamed milk.<br /><br />
-                <strong>Price:</strong> Single $2.00; Double $3.00
+                House blend coffee with steamed milk.
+                <div style="margin-top: 8px">
+                  <strong>Price:</strong> Single $2.00; Double $3.00
+                </div>
+                <div class="shot-options">
+                  <label
+                    ><input
+                      type="radio"
+                      name="shot_cafe"
+                      value="single"
+                      checked
+                    />
+                    Single</label
+                  >
+                  <label
+                    ><input type="radio" name="shot_cafe" value="double" />
+                    Double</label
+                  >
+                </div>
               </td>
-
               <td>
-                <label
-                  >Single:
-                  <input
-                    type="number"
-                    name="qty_Cafe_Single"
-                    min="0"
-                    step="1"
-                    placeholder="0"
-                    style="width: 50px" /></label
-                ><br />
-                <label
-                  >Double:
-                  <input
-                    type="number"
-                    name="qty_Cafe_Double"
-                    min="0"
-                    step="1"
-                    placeholder="0"
-                    style="width: 50px"
-                /></label>
+                <input
+                  type="number"
+                  name="qty_cafe"
+                  min="0"
+                  step="1"
+                  value="0"
+                />
               </td>
-
-              <td class="subtotal" data-item="Cafe">$0.00</td>
+              <td>
+                <input
+                  type="text"
+                  name="subtotal_cafe"
+                  value="$0.00"
+                  readonly
+                />
+              </td>
             </tr>
+
+            <!-- Iced Cappuccino (radio options moved into description) -->
             <tr>
               <td>Iced Cappuccino</td>
               <td>
                 Sweetened espresso blended with icy-cold milk and served in a
-                chilled glass.<br /><br />
-                <strong>Price:</strong> Single $4.75; Double $5.75
+                chilled glass.
+                <div style="margin-top: 8px">
+                  <strong>Price:</strong> Single $4.75; Double $5.75
+                </div>
+                <div class="shot-options">
+                  <label
+                    ><input
+                      type="radio"
+                      name="shot_capp"
+                      value="single"
+                      checked
+                    />
+                    Single</label
+                  >
+                  <label
+                    ><input type="radio" name="shot_capp" value="double" />
+                    Double</label
+                  >
+                </div>
               </td>
               <td>
-                <label
-                  >Single:
-                  <input
-                    type="number"
-                    name="qty_Cap_Single"
-                    min="0"
-                    step="1"
-                    placeholder="0"
-                    style="width: 50px" /></label
-                ><br />
-                <label
-                  >Double:
-                  <input
-                    type="number"
-                    name="qty_Cap_Double"
-                    min="0"
-                    step="1"
-                    placeholder="0"
-                    style="width: 50px"
-                /></label>
+                <input
+                  type="number"
+                  name="qty_capp"
+                  min="0"
+                  step="1"
+                  value="0"
+                />
               </td>
-
-              <td class="subtotal" data-item="Cap">$0.00</td>
+              <td>
+                <input
+                  type="text"
+                  name="subtotal_capp"
+                  value="$0.00"
+                  readonly
+                />
+              </td>
             </tr>
           </table>
+
           <div style="text-align: right; margin-top: 20px">
             <strong>Total:</strong> $<span id="total">0.00</span>
           </div>
         </div>
       </div>
+
       <footer>
         <i>
           <p>
-            Copyright &copy 2014 JavaJam Coffee House<br /><u
+            Copyright &copy 2014 JavaJam Coffee House<br />
+            <u
               ><a href="mailto:MuhammadAzfarNasri@BinAzman.com"
                 >MuhammadAzfarNasri@BinAzman.com</a
               ></u
