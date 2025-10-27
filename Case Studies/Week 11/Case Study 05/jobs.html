@@ -3,98 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaJam Coffee House</title>
-    <script src="formvalidation.js"></script>
+    <title>JavaJam Coffee House - Jobs</title>
+    <script src="formvalidation.js" defer></script>
+    <link rel="stylesheet" href="javajam.css" />
+
     <style>
-      body {
-        font-family: Verdana, Arial, sans-serif;
-      }
-
-      #wrapper {
-        background-color: #ddd1b7;
-        width: 80vw;
-        margin: auto;
-        min-width: 800px;
-      }
-
-      #leftcolumn {
-        float: left;
-        width: 150px;
-      }
-
-      #rightcolumn {
-        margin-left: 150px;
-        background-color: #f4f5e0;
-      }
-
-      .content {
-        padding: 20px 20px 20px 20px;
-      }
-
-      header {
-        height: 120px;
-        background-image: url("JavaJam Coffee House.jpg");
-        background-repeat: no-repeat;
-        background-color: #cdab61;
-        background-position: center;
-      }
-
-      footer {
-        background-color: #cdab61;
-        font-size: 150%;
-        text-align: center;
-        width: 100%;
-        height: 120px;
-      }
-
-      h1 {
-        padding: 0;
-        margin: 0;
-      }
-
-      h2 {
-        color: #422312;
-        font-family: arial, sans-serif;
-        margin: 0;
-      }
-
-      footer {
-        color: black;
-        font-size: 70%;
-        padding: 20px 0 20px 0;
-        height: auto;
-      }
-
-      nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 15px;
-      }
-
-      nav a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        margin: 5px 0;
-      }
-
-      nav a:hover {
-        color: #ccaa66;
-      }
-      table {
-        border-color: black;
-        border-width: 1px;
-        border-style: solid;
-        margin-top: 20px;
-        text-align: center;
-      }
-      tr:nth-of-type(odd) {
-        background-color: #cdab61;
-      }
-      td {
-        padding: 5px 5px 5px 5px;
-      }
       .error-message {
         display: inline-block;
         color: red;
@@ -105,18 +18,28 @@
       textarea:invalid {
         border-color: red;
       }
+
+      /* Center the form table */
+      table {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
     </style>
   </head>
-
   <body>
     <div id="wrapper">
       <header></header>
       <div id="leftcolumn">
         <nav>
-          <a href="index.html" id="current">Home</a>
+          <a href="index.html">Home</a>
           <a href="menu.php">Menu</a>
           <a href="music.html">Music</a>
           <a href="jobs.html">Jobs</a>
+          <hr />
+          <b>Admin</b>
+          <a href="update_price.php">Update Prices</a>
+          <a href="sales_report.php">Sales Report</a>
         </nav>
       </div>
       <div id="rightcolumn">
@@ -127,7 +50,7 @@
             application. Required field are marked with a asterisks *
           </p>
           <form action="show_post.php" method="post">
-            <table width="500px" align="center">
+            <table>
               <tr>
                 <td align="left"><label for="name">*Name</label></td>
                 <td align="left">
@@ -175,7 +98,6 @@
                   />
                 </td>
               </tr>
-
               <tr>
                 <td align="left">
                   <label for="experience">*Experience</label>
@@ -227,8 +149,8 @@
         <i>
           <p>
             Copyright &copy 2014 JavaJam Coffee House<br /><u
-              ><a href="mailto:MuhammadAzfarNasri@BinAzman.com"
-                >MuhammadAzfarNasri@BinAzman.com</a
+              ><a href="mailto:your_email@domain.com"
+                >your_email@domain.com</a
               ></u
             >
           </p>

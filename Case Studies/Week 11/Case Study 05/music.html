@@ -3,109 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaJam Coffee House</title>
-    <style>
-      body {
-        font-family: Verdana, Arial, sans-serif;
-      }
-
-      #wrapper {
-        background-color: #ddd1b7;
-        width: 80vw;
-        margin: auto;
-        min-width: 800px;
-      }
-
-      #leftcolumn {
-        float: left;
-        width: 150px;
-      }
-
-      #rightcolumn {
-        margin-left: 150px;
-        background-color: #f4f5e0;
-      }
-
-      .content {
-        padding: 20px 20px 20px 20px;
-      }
-
-      header {
-        height: 120px;
-        background-image: url("JavaJam Coffee House.jpg");
-        background-repeat: no-repeat;
-        background-color: #cdab61;
-        background-position: center;
-      }
-
-      footer {
-        background-color: #cdab61;
-        font-size: 150%;
-        text-align: center;
-        width: 100%;
-        height: 120px;
-      }
-
-      h1 {
-        padding: 0;
-        margin: 0;
-      }
-
-      h2 {
-        color: #422312;
-        font-family: arial, sans-serif;
-        margin: 0;
-      }
-
-      footer {
-        color: black;
-        font-size: 70%;
-        padding: 20px 0 20px 0;
-        height: auto;
-      }
-
-      nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 15px;
-      }
-
-      nav a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        margin: 5px 0;
-      }
-
-      nav a:hover {
-        color: #ccaa66;
-      }
-      table {
-        border-color: black;
-        border-width: 1px;
-        border-style: solid;
-        margin-top: 20px;
-        text-align: center;
-      }
-      tr:nth-of-type(odd) {
-        background-color: #cdab61;
-      }
-      td {
-        padding: 5px 5px 5px 5px;
-      }
-    </style>
+    <title>JavaJam Coffee House - Music</title>
+    <link rel="stylesheet" href="javajam.css" />
   </head>
-
   <body>
     <div id="wrapper">
       <header></header>
       <div id="leftcolumn">
         <nav>
-          <a href="index.html" id="current">Home</a>
+          <a href="index.html">Home</a>
           <a href="menu.php">Menu</a>
           <a href="music.html">Music</a>
           <a href="jobs.html">Jobs</a>
+          <hr />
+          <b>Admin</b>
+          <a href="update_price.php">Update Prices</a>
+          <a href="sales_report.php">Sales Report</a>
         </nav>
       </div>
       <div id="rightcolumn">
@@ -115,7 +28,7 @@
             The first Friday night each month is a special night. Join us from
             8pm to 11pm for some music you won't want to miss
           </p>
-          <table width="500px" align="center">
+          <table>
             <tr>
               <th align="left">Artist</th>
               <th align="left">Date</th>
@@ -154,7 +67,7 @@
               <td>
                 <audio controls>
                   <source
-                    src="Case Studies/Week 04/casestudy_02/the-best-jazz-club-in-new-orleans-164472.mp3.mp3"
+                    src="the-best-jazz-club-in-new-orleans-164472.mp3"
                     type="audio/mpeg"
                   />
                   Your browser does not support the audio element.
@@ -168,8 +81,8 @@
         <i>
           <p>
             Copyright &copy 2014 JavaJam Coffee House<br /><u
-              ><a href="mailto:MuhammadAzfarNasri@BinAzman.com"
-                >MuhammadAzfarNasri@BinAzman.com</a
+              ><a href="mailto:your_email@domain.com"
+                >your_email@domain.com</a
               ></u
             >
           </p>

@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "javajam";
+$dbname = "javajam cs5";
 
 try {
   $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
