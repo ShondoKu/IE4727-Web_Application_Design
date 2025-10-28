@@ -1,5 +1,4 @@
 <?php
-// --- Database Connection ---
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -13,7 +12,6 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate_report'])) {
-        // --- Report 1: Sales by Product ---
         if (!empty($_POST['report_type']) && in_array('by_product', $_POST['report_type'])) {
             $sql = "SELECT p.name, SUM(oi.quantity) AS total_quantity, SUM(oi.price_at_sale * oi.quantity) AS total_sales
                     FROM order_items oi JOIN products p ON oi.product_id = p.id
@@ -21,14 +19,12 @@ try {
             $report_by_product = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         }
 
-        // --- Report 2: Sales by Categories ---
         if (!empty($_POST['report_type']) && in_array('by_category', $_POST['report_type'])) {
             $sql = "SELECT COALESCE(shot_type, 'Null') AS category, SUM(quantity) AS total_quantity, SUM(price_at_sale * quantity) AS total_sales
                     FROM order_items GROUP BY category ORDER BY category";
             $report_by_category = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         }
 
-        // --- Find Best Selling Product & Most Popular Option ---
         $best_seller_sql = "SELECT p.id, p.name FROM order_items oi JOIN products p ON oi.product_id = p.id
                             GROUP BY p.id, p.name ORDER BY SUM(oi.price_at_sale * oi.quantity) DESC LIMIT 1";
         $best_seller = $pdo->query($best_seller_sql)->fetch(PDO::FETCH_ASSOC);
@@ -166,7 +162,7 @@ try {
         <footer>
             <i>
                 <p>Copyright &copy; 2014 JavaJam Coffee House<br><u><a
-                            href="mailto:your_email@domain.com">your_email@domain.com</a></u></p>
+                            href="mailto:azfarnasri@binazman.com">azfarnasri@binazman.com</a></u></p>
             </i>
         </footer>
     </div>

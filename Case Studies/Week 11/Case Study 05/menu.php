@@ -1,5 +1,4 @@
 <?php
-// --- Database Connection ---
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -9,20 +8,15 @@ try {
   $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  // --- Fetch All Products ---
   $stmt = $pdo->query("SELECT name, price_single, price_double FROM products");
 
-  // THE FIX IS HERE:
-  // 1. Fetch as a standard associative array.
   $db_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  // 2. Loop through the results to create an array keyed by the product name.
   $products_by_name = [];
   foreach ($db_products as $product) {
     $products_by_name[$product['name']] = $product;
   }
 
-  // --- Prepare a simplified array for JavaScript using the new organized array ---
   $js_prices = [
     'java' => (float) $products_by_name['Just Java']['price_single'],
     'cafe' => [
@@ -172,7 +166,7 @@ try {
     <footer>
       <i>
         <p>Copyright &copy; 2014 JavaJam Coffee House<br><u><a
-              href="mailto:your_email@domain.com">your_email@domain.com</a></u></p>
+              href="mailto:azfarnasri@binazman.com">azfarnasri@binazman.com</a></u></p>
       </i>
     </footer>
   </div>

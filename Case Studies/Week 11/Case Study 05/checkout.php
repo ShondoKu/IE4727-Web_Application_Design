@@ -1,5 +1,4 @@
 <?php
-// --- Database Connection ---
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,36 +9,32 @@ try {
     $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // --- Fetch Current Prices from DB ---
     $prices = [];
     $stmt = $pdo->query("SELECT id, name, price_single, price_double FROM products");
     foreach ($stmt as $row) {
         $prices[$row['name']] = ['id' => $row['id'], 'single' => $row['price_single'], 'double' => $row['price_double']];
     }
 
-    // --- Process Order ---
     $pdo->beginTransaction();
 
-    // Create a new order record to get an order_id
     $pdo->exec("INSERT INTO orders (order_date) VALUES (NOW())");
     $order_id = $pdo->lastInsertId();
 
     $insert_stmt = $pdo->prepare("INSERT INTO order_items (order_id, product_id, quantity, shot_type, price_at_sale) VALUES (?, ?, ?, ?, ?)");
     $items_in_order = 0;
 
-    // Process "Just Java"
     if (isset($_POST['qty_java']) && $_POST['qty_java'] > 0) {
         $insert_stmt->execute([$order_id, $prices['Just Java']['id'], $_POST['qty_java'], null, $prices['Just Java']['single']]);
         $items_in_order++;
     }
-    // Process "Cafe au Lait"
+    
     if (isset($_POST['qty_cafe']) && $_POST['qty_cafe'] > 0) {
         $shot = $_POST['shot_cafe'];
         $price = $prices['Cafe au Lait'][$shot];
         $insert_stmt->execute([$order_id, $prices['Cafe au Lait']['id'], $_POST['qty_cafe'], $shot, $price]);
         $items_in_order++;
     }
-    // Process "Iced Cappuccino"
+
     if (isset($_POST['qty_capp']) && $_POST['qty_capp'] > 0) {
         $shot = $_POST['shot_capp'];
         $price = $prices['Iced Cappuccino'][$shot];
@@ -47,13 +42,12 @@ try {
         $items_in_order++;
     }
 
-    // Only commit if items were actually added to the order
     if ($items_in_order > 0) {
         $pdo->commit();
-        $message = "✅ Your order has been placed successfully!";
+        $message = "Your order has been placed successfully!";
     } else {
-        $pdo->rollBack(); // No items, so rollback the empty order
-        $message = "⚠️ Your cart was empty. No order was placed.";
+        $pdo->rollBack();
+        $message = "Your cart was empty. No order was placed.";
     }
 
 } catch (PDOException $e) {
@@ -97,7 +91,7 @@ try {
         <footer>
             <i>
                 <p>Copyright &copy; 2014 JavaJam Coffee House<br><u><a
-                            href="mailto:your_email@domain.com">your_email@domain.com</a></u></p>
+                            href="mailto:azfarnasri@binazman.com">azfarnasri@binazman.com</a></u></p>
             </i>
         </footer>
     </div>

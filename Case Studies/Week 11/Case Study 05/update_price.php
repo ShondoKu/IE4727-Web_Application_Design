@@ -1,5 +1,4 @@
 <?php
-// --- Database Connection ---
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,7 +9,6 @@ try {
     $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // --- Handle Form Submission to Update Prices ---
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_prices'])) {
         if (!empty($_POST['selected_products'])) {
             $stmt = $pdo->prepare("UPDATE products SET price_single = :price_single, price_double = :price_double WHERE id = :id");
@@ -27,11 +25,10 @@ try {
             }
             $update_message = "Prices updated successfully!";
         } else {
-            $update_message = "⚠️ Please select a product to update.";
+            $update_message = "Please select a product to update.";
         }
     }
 
-    // --- Fetch All Products to Display ---
     $products = $pdo->query("SELECT id, name, price_single, price_double FROM products ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
@@ -46,7 +43,6 @@ try {
     <title>Admin - Price Update</title>
     <link rel="stylesheet" href="javajam.css">
     <style>
-        /* Styles specific to this admin page */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -143,7 +139,7 @@ try {
         <footer>
             <i>
                 <p>Copyright &copy; 2014 JavaJam Coffee House<br><u><a
-                            href="mailto:your_email@domain.com">your_email@domain.com</a></u></p>
+                            href="mailto:azfarnasri@binazman.com">azfarnasri@binazman.com</a></u></p>
             </i>
         </footer>
     </div>
